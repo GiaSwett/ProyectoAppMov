@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" size-md="6">
+        <ion-card class="tarjeta">
+          <ion-card-header>
+            <ion-card-title class="tituloRecuperar">Ingrese su correo para recuperar su cuenta</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form class="contenederRecuperar">
+              <ion-item>
+                <ion-label class="correorecuperar" position="floating">Correo Electrónico</ion-label>
+                <ion-input type="email" name="email" required></ion-input>
+              </ion-item>
+
+              <ion-button expand="full" type="submit" class="ion-margin-top">Recuperar Contraseña</ion-button>
+
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+</ion-content>

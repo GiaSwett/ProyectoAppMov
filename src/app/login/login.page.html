@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" size-md="6">
+        <ion-card class="tarjeta">
+          <ion-card-header>
+            <ion-card-title class="tituloTarjeta">Bienvenido a DigitalCorp</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form class="contenederCamposInicio">
+              <ion-item>
+                <ion-label class="correo" position="floating">Correo Electrónico</ion-label>
+                <ion-input type="email" name="email" [(ngModel)]="correo" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label class="correo" position="floating">Contraseña</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="contrasena" minlength="8" maxlength="12" required></ion-input>
+              </ion-item>
+
+              <div class="recuperar">
+                <a class="linkRecuperar" href="./contra-recuperar">
+                  ¿Olvidaste tu contraseña?
+                </a>
+              </div>
+
+              <ion-button expand="full" (click)="iniciarSesion()" class="ion-margin-top">Iniciar Sesión</ion-button>
+
+              <div class="crearUsuario">
+                <a class="linkRegistro" href="./registrer">Registrarse en la página</a>
+              </div>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

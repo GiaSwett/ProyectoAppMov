@@ -1,0 +1,37 @@
+.tituloTarjeta{
+    font-size: 1.5 rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.correo{
+    font-weight: bold;
+}
+
+.recuperar{
+    text-align: right; 
+    margin: 8px 16px;
+}
+
+.linkRecuperar{
+    font-size: 0.9 rem; 
+    font-style: italic;
+    color: var(--ion-color-primary); 
+    text-decoration: none;
+}
+
+.crearUsuario{
+    text-align: center; 
+    margin: 8px 16px;
+}
+
+.linkRegistro{
+    font-size: 1 rem; 
+    font-style: italic;
+    color: blue; 
+    text-decoration: none;
+}
+
+.tarjeta {
+    background-color: #F2F2F2
+}

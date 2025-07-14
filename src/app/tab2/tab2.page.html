@@ -1,0 +1,189 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <img src="assets/img/digitalcorp_logo_sinnombre.png" alt="Logo" class="logoImg">
+    <ion-title>
+      Catalogo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment [scrollable]="true" [(ngModel)]="seleccion">
+    <ion-segment-button value="celulares">
+      <ion-label>Celulares</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tecnologia">
+      <ion-label>Tecnologia</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="parlantes">
+      <ion-label>Parlantes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Accesorios">
+      <ion-label>Accesorios</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="impresoras">
+      <ion-label>Impresoras</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="camaras">
+      <ion-label>Camaras de vigilacia</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ng-container [ngSwitch]="seleccion">
+    <ng-container *ngSwitchCase="'celulares'">
+      <ion-list *ngIf="productosCelulares?.length; else sinCelulares">
+        <ion-item *ngFor="let producto of productosCelulares">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/celular1.png" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinCelulares>
+        <ion-text color="medium">No hay celulares disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'tecnologia'">
+      <ion-list *ngIf="productosTecnologia?.length; else sinLaptops">
+        <ion-item *ngFor="let producto of productosTecnologia">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/Laptop2.jpg" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinLaptops>
+        <ion-text color="medium">No hay laptops disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'parlantes'">
+      <ion-list *ngIf="productosParlantes?.length; else sinParlantes">
+        <ion-item *ngFor="let producto of productosParlantes">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/parlantes2.jpg" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinParlantes>
+        <ion-text color="medium">No hay productos disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Accesorios'">
+      <ion-list *ngIf="productosAccesorios?.length; else sinAccesorios">
+        <ion-item *ngFor="let producto of productosAccesorios">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/teclado1.jpg" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinAccesorios>
+        <ion-text color="medium">No hay productos disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'impresoras'">
+      <ion-list *ngIf="productosImpresoras?.length; else sinImpresoras">
+        <ion-item *ngFor="let producto of productosImpresoras">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/impresora.jpg" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinImpresoras>
+        <ion-text color="medium">No hay productos disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'camaras'">
+      <ion-list *ngIf="productosCamaras?.length; else sinCamaras">
+        <ion-item *ngFor="let producto of productosCamaras">
+          <ion-thumbnail slot="start">
+            <img src="assets/img/camara1.jpg" alt="{{ producto.Nombre }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ producto.Nombre }}</h2>
+            <p>
+              Precio: {{ producto.Precio | currency:'USD' }}<br>
+              Stock: {{ producto.Stock }}
+            </p>
+            <ion-buttons>
+              <ion-button color="primary">Ver más</ion-button>
+              <ion-button (click)="agregar(producto)">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #sinCamaras>
+        <ion-text color="medium">No hay productos disponibles.</ion-text>
+      </ng-template>
+    </ng-container>
+  </ng-container>
+</ion-content>

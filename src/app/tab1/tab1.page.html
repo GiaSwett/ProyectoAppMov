@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <img src="assets/img/digitalcorp_logo_sinnombre.png" alt="Logo" class="logoImg">
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+        <ion-searchbar search-icon="search" fill="clean"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="13" size-md="6">
+        <ion-card class="tarjeta">
+          <img src="assets/img/encabezado.png" class="encabezado">
+          <ion-card-header>
+            <ion-card-title class="TarjetaInicio">Bienvenido a DigitalCorp</ion-card-title>
+          </ion-card-header>
+          <ion-card-content> Explora nuestra tienda y maravillate con la gran variedad de productos que tenemos como celulares, 
+            laptops, accesorios y muchos más. Para más beneficios y promociones unete a nuestra página.</ion-card-content>
+
+            <div style="display: flex; justify-content: space-between; gap: 8px;">
+            <ion-button [routerLink]="['/login']">Iniciar Sesión</ion-button> 
+            <ion-button [routerLink]="['/registrer']">Crear Cuenta</ion-button>
+            </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h2>Productos destacados</h2>
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" size-md="3">
+      <ion-card class="tarjeta">
+        <img src="assets/img/celular1.png" alt="Celular" class="productoImg">
+        <ion-card-header>
+          <ion-card-title>Iphone 14 Pro</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Uno de los últimos modelos con tecnología avanzada.</ion-card-content>
+
+        <div>
+          <ion-button>Ver más</ion-button>
+          <ion-button fill="clean" color="primary">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card>
+    </ion-col>
+      
+    <ion-col size="6" size-md="3">
+      <ion-card class="tarjeta">
+        <img src="assets/img/Laptop2.jpg" alt="Laptop" class="productoImg">
+        <ion-card-header>
+          <ion-card-title>Laptop HP</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Una de las mejores computadoras, potente y que permite hacer buenas trabajos, por su alto rendimiento.</ion-card-content>
+        <div>
+          <ion-button>Ver más</ion-button>
+          <ion-button fill="clean" color="primary">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

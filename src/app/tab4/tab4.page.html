@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <img src="assets/img/digitalcorp_logo_sinnombre.png" alt="Logo" class="logoImg">
+    <ion-title>Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="avatar">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+</div>
+
+  <ion-segment>
+    <ion-segment-button value="informacion" content-id="informacion">
+      <ion-label>Información</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pedidos" content-id="pedidos">
+      <ion-label>Mis pedidos</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-segment-view>
+    <ion-segment-content id="informacion">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-input label="Nombres:" [value]="nombre" readonly> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Apellidos:" [value]="apellido" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Dirección:" [value]="direccion" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Teléfono:" [value]="telefono" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Correo electrónico:" [value]="correo" readonly></ion-input>
+      </ion-item>
+      <ion-buttons>
+        <ion-button color="primary">Editar</ion-button>
+      </ion-buttons>
+    </ion-list>
+    </ion-segment-content>
+
+    <ion-segment-content id="pedidos">
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-input label="Pedidos Activos:" readonly> </ion-input>
+            <ion-label>3</ion-label>
+        </ion-item> 
+      </ion-list>
+    </ion-segment-content>
+  </ion-segment-view>>
+</ion-content>

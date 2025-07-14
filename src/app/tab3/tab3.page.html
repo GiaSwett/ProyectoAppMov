@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezadoBarra">
+    <img src="assets/img/digitalcorp_logo_sinnombre.png" alt="Logo" class="logoImg">
+    <ion-title>
+      Carrito
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let p of productos">
+      <ion-thumbnail slot="start">
+        <img [src]="p.imagen" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ p.Nombre }}</h2>
+        <p>Precio: {{ p.Precio | currency:'USD' }}</p>
+        <div>
+          <ion-button size="small" (click)="restar(p)">-</ion-button> 
+          <ion-input [value]="p.cantidad" readonly></ion-input>
+          <ion-button size="small" (click)="sumar(p)">+</ion-button>
+        </div>
+      </ion-label>
+      <ion-button color="danger" fill="clear" (click)="eliminarDelCarrito(p)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="tarjeta">
+    <ion-card-content class="tarjeta">
+      <ion-item>
+        <ion-label>SubTotal</ion-label>
+        <ion-note slot="end">{{ total | currency:'USD' }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>IVA</ion-label>
+        <ion-note slot="end">{{ iva | currency:'USD' }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Envío</ion-label>
+        <ion-note slot="end">{{ envio | currency:'USD' }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Total a Pagar</strong></ion-label>
+        <ion-note slot="end"><strong>{{ totalFinal | currency:'USD' }}</strong></ion-note>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button class="boton">Pagar</ion-button>
+  <ion-button class="boton" (click)="vaciarCarrito()">Cancelar</ion-button>
+</ion-content>
